@@ -8,5 +8,20 @@
             "homepage": "http://instaclick.com/"
         }
     ],
-    "target-dir": "Instaclick"
+    "target-dir": "Instaclick",
+    "autoload": {
+        "classmap": [
+            "Instaclick/Sniffs/"
+        ]
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:instaclick/ObjectCalisthenicsSniffs.git"
+        }
+    ],
+    "require": {
+        "instaclick/symfony2-coding-standard": "dev-remaster",
+        "instaclick/object-calisthenics-sniffs": "dev-master"
+    }
 }

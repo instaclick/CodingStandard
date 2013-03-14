@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="Instaclick">
+    <description>Instaclick Coding Standard</description>
+
+    <exclude-pattern>*/Resources/*</exclude-pattern>
+
+    <rule ref="../../symfony2-coding-standard/Symfony2/ruleset.xml">
+        <exclude name="PEAR.Functions.FunctionCallSignature"/>
+        <exclude name="PSR2.ControlStructures.ControlStructureSpacing"/>
+    </rule>
+    <rule ref="../../symfony2-coding-standard/Symfony2/"/>
+    <rule ref="Symfony2.Commenting.FunctionComment.MissingParamComment">
+        <severity>0</severity>
+    </rule>
+    <rule ref="PSR1.Files.SideEffects.FoundWithSymbols">
+        <exclude-pattern>*Bundle/Context/*</exclude-pattern>
+    </rule>
+    <rule ref="Generic.Files.LineLength.TooLong">
+        <severity>0</severity>
+    </rule>
+    <rule ref="ObjectCalisthenics.ControlStructures.NoElse">
+        <exclude-pattern>*Bundle/Tests/*</exclude-pattern>
+    </rule>
+    <!--rule ref="ObjectCalisthenics.Classes.SmallClass">
+        <exclude-pattern>*Bundle/DataFixtures/*</exclude-pattern>
+        <exclude-pattern>*Bundle/Tests/*</exclude-pattern>
+    </rule-->
+</ruleset>
