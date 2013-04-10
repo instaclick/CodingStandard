@@ -55,7 +55,12 @@ class Instaclick_Sniffs_Namespaces_NamespaceStructureSniff implements PHP_CodeSn
         $namespace = '';
 
         for ($i = ($stackPtr + 2); $i < $phpcsFile->numTokens; $i++) {
+	    if ($tokens[$i]['type'] === 'T_WHITESPACE') {
+                continue;
+            }
+
             if ($tokens[$i]['type'] === 'T_SEMICOLON'
+                || $tokens[$i]['type'] === 'T_OPEN_CURLY_BRACKET'
                 || $tokens[$i]['line'] !== $tokens[$stackPtr]['line']
             ) {
                 break;
