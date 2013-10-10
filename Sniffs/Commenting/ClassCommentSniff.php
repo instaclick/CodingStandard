@@ -65,14 +65,16 @@ class Instaclick_Sniffs_Commenting_ClassCommentSniff implements PHP_CodeSniffer_
      */
     protected $tags = array(
         'group' => array(
-            'required'       => false,
+            'required'       => true,
             'allow_multiple' => true,
             'order_text'     => 'precedes @author',
+            'file_regex'     => '~.+Test[.]php$~',
         ),
         'author'     => array(
             'required'       => true,
             'allow_multiple' => true,
             'order_text'     => 'follows @group (if used)',
+            'file_regex'     => '',
         ),
     );
 
@@ -254,6 +256,11 @@ class Instaclick_Sniffs_Commenting_ClassCommentSniff implements PHP_CodeSniffer_
         $errorPos    = 0;
 
         foreach ($this->tags as $tag => $info) {
+
+            // Check certain files
+            if ($info['file_regex'] && ! preg_match($info['file_regex'], $this->currentFile->getFilename())) {
+               continue;
+            }
 
             // Required tag missing.
             if ($info['required'] === true && in_array($tag, $foundTags) === false) {
