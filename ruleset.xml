@@ -9,7 +9,17 @@
         <exclude name="PSR2.ControlStructures.ControlStructureSpacing"/>
     </rule>
 
-    <rule ref="PSR1.Files.SideEffects.FoundWithSymbols">
+    <rule ref="PSR1">
+        <exclude name="PSR1.Files.SideEffects"/>
+    </rule>
+
+    <rule ref="Instaclick.Files.SideEffects">
+        <properties>
+          <property name="excludeDeclare" value="true"/>
+        </properties>
+    </rule>
+
+    <rule ref="Instaclick.Files.SideEffects.FoundWithSymbols">
         <exclude-pattern>*Bundle/Context/*</exclude-pattern>
     </rule>
 
