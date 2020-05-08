@@ -22,8 +22,8 @@
     ],
     "require": {
         "squizlabs/php_codesniffer": "~1.5",
-        "instaclick/symfony2-coding-standard": "dev-remaster",
-        "instaclick/object-calisthenics-sniffs": "dev-master"
+        "instaclick/symfony2-coding-standard": "~0.0.2",
+        "instaclick/object-calisthenics-sniffs": "~1.0.0"
     },
     "extra": {
         "branch-alias": {
